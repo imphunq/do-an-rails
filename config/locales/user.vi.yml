@@ -1,0 +1,50 @@
+vi:
+  admin:
+    users:
+      index:
+        index: "STT"
+        name: "Tên đầy đủ"
+        email: "Email"
+        staff_type: "Loại nhân viên"
+        status: "Trạng thái"
+        action: "Thao tác"
+        user_management: "Quản lý người dùng"
+        list_users: "Danh sách người dùng"
+        new_users: "Thêm mới người dùng"
+        staff_types:
+          part_time: "Bán thời gian"
+          full_time: "Toàn thời gian"
+        not_found: "Không tìm thấy người dùng"
+        login_success: "Đăng nhập thành công"
+        logout_success: "Đăng xuất thành công"
+      user:
+        edit: "Sửa"
+        delete: "Xóa"
+      new:
+        new_users: "Thêm mới người dùng"
+      form:
+        upload: "Tải lên"
+        create_user: "Tạo mới người dùng"
+        email: "Email"
+        name: "Tên người dùng"
+        staff_type: "Loại nhân viên"
+        gender: "Giới tính"
+        birthday: "Ngày sinh"
+        phone: "Số điện thoại"
+        save: "Lưu"
+        avatar: "Avatar"
+        genders:
+          female: "Nữ"
+          male: "Nam"
+          other: "Khác"
+        select_staff_type: "Chọn loại nhân viên"
+        select_gender: "Chọn giới tính"
+      create:
+        success: "Thêm mới thành công"
+        fail: "Thêm mới thất bại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa bản ghi thành công"
+        fail: "Xóa bản ghi thất bại"

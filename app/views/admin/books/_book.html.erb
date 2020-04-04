@@ -1,0 +1,30 @@
+<tr>
+  <td class="text-center" >
+    <%= create_index params[:page], book_counter, Settings.paginate.show_15 %>
+  </td>
+  <td class="text-center"><strong><%= book.name %></strong></td>
+  <td class="text-center"><%= raw book.description %></td>
+  <td class="text-center"><%= book.money %></td>
+  <td class="text-center"><%= book.quantity %></td>
+  <td class="text-center"><%= book.author.name %></td>
+  <td class="text-center">
+    <p class="label label_category_<%= book.status %>">
+      <%= book.enable_status_i18n %>
+    </p>
+  </td>
+  <td class="text-center" >
+    <div class="btn-group option">
+      <%= link_to edit_admin_book_path(book), class: "btn btn-xs btn-primary button-custom",
+        title: t(".edit") do %>
+        <i class="fa fa-pencil-alt" aria-hidden="true"></i>
+      <% end %>
+    </div>
+    <div class="btn-group option">
+      <%= button_tag class: "btn btn-xs btn-danger delete-book-button button-custom-danger",
+        title: t(".delete"), data: {id: book.id, name: book.name} do %>
+        <i class="fa fa-trash icon"></i>
+      <% end %>
+    </div>
+    </div>
+  </td>
+</tr>

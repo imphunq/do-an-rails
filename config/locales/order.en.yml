@@ -1,0 +1,34 @@
+en:
+  admin:
+    orders:
+      index:
+        order_management: "Order Management"
+        list_orders: "List orders"
+        index: "#"
+        user_name: "Username"
+        address: "Address"
+        phone: "Phone"
+        date: "Date"
+        status: "Status"
+        action: "Action"
+        status_work:
+          pending: "Pending"
+          accept: "Accept"
+          refuse: "Reject"
+      update:
+        success: "Update success"
+        fail: "Update failed"
+      order:
+        accept: "Accept"
+        reject: "Reject"
+        show: "Detail"
+      detail:
+        order_detail: "Order Detail"
+        name: "Customer name: "
+        address: "Address: "
+        phone: "Phone: "
+        book_name: "Book name"
+        quantity: "Quantity"
+        price: "Unit price"
+        info: "Order info"
+        date: "Date: "

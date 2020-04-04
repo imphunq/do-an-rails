@@ -1,0 +1,160 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>PRODUCT DETAILS</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+              Home
+            <% end %>
+          </li>
+          <li>Product Details</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Breadcrumbs Area Start -->
+<!-- Single Product Area Start -->
+<div class="single-product-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-7">
+        <div class="single-product-image-inner">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="one">
+              <a class="venobox" href="<%= @book.image.url %>" data-gall="gallery" title="">
+                <%= image_tag @book.image.url %>
+              </a>
+
+            </div>
+<!--             <div role="tabpanel" class="tab-pane" id="two">
+              <a class="venobox" href="img/single-product/bg-2.jpg" data-gall="gallery" title="">
+                <img src="img/single-product/bg-2.jpg" alt="">
+              </a>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="three">
+              <a class="venobox" href="img/single-product/bg-3.jpg" data-gall="gallery" title="">
+                <img src="img/single-product/bg-3.jpg" alt="">
+              </a>
+            </div> -->
+          </div>
+          <!-- Nav tabs -->
+          <ul class="product-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab"><img src="img/single-product/1.jpg" alt=""></a></li>
+            <li role="presentation"><a href="#two" aria-controls="two" role="tab" data-toggle="tab"><img src="img/single-product/2.jpg" alt=""></a></li>
+            <li role="presentation"><a href="#three" aria-controls="three" role="tab" data-toggle="tab"><img src="img/single-product/3.jpg" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-5">
+        <div class="single-product-details">
+          <div class="list-pro-rating">
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h2><%= @book.name %></h2>
+          <% if @book.quantity > 0 %>
+            <div class="availability">
+              <span>In stock</span>
+            </div>
+          <% else %>
+            <div class="out-of-stock">
+              <span>Out of stock</span>
+            </div>
+          <% end %>
+          <p><%= @book.description.html_safe %></p>
+          <div class="single-product-price">
+            <h2><%= format_money_amount @book.money %></h2>
+          </div>
+          <div class="product-attributes clearfix">
+            <span class="pull-left" id="quantity-wanted-p">
+              <input type="number" value="1" min="1" class="cart-plus-minus-box cart-quantity">
+            </span>
+            <span>
+              <%= link_to carts_path(id: @book.id, price: @book.money, qty: 1), remote: true, method: :post, class: "cart-btn btn-default" do %>
+                <i class="fas fa-cart-plus"></i>
+                Add to cart
+              <% end %>
+            </span>
+          </div>
+          <div class="add-to-wishlist">
+            <% if user_signed_in? && @book.wishlist_by_user?(current_user) %>
+              <%= render "remove_wishlist", wishlist: @wishlist, book: @book %>
+            <% else %>
+              <%= render "add_wishlist", book: @book %>
+            <% end %>
+          </div>
+          <div class="single-product-categories">
+           <label>Categories:</label>
+           <span>e-book, biological, business</span>
+         </div>
+         <div class="social-share">
+          <label>Share: </label>
+          <ul class="social-share-icon">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            <li><a href="#"><i class="fab fa-flickr"></i></a></li>
+          </ul>
+        </div>
+        <div id="product-comments-block-extra">
+          <ul class="comments-advices">
+            <li>
+              <a href="#" class="open-comment-form">Write a review</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="p-details-tab-content">
+        <div class="p-details-tab">
+          <ul class="p-details-nav-tab" role="tablist">
+            <li role="presentation" class="active"><a href="#more-info" aria-controls="more-info" role="tab" data-toggle="tab">Description</a></li>
+            <li role="presentation"><a href="#data" aria-controls="data" role="tab" data-toggle="tab">Review</a></li>
+            <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Tab</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="tab-content review">
+          <div role="tabpanel" class="tab-pane active" id="more-info">
+            <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="data">
+            <table class="table-data-sheet">
+              <tbody>
+                <tr class="odd">
+                  <td>Compositions</td>
+                  <td>Cotton</td>
+                </tr>
+                <tr class="even">
+                  <td>Styles</td>
+                  <td>Casual</td>
+                </tr>
+                <tr class="odd">
+                  <td>Properties</td>
+                  <td>Short Sleeve</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="reviews">
+            <div id="product-comments-block-tab">
+              <a href="#" class="comment-btn"><span>Be the first to write your review!</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

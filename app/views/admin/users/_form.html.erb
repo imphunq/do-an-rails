@@ -1,0 +1,96 @@
+<%= form_for [:admin, @user], authenticity_token: true, html: { autocomplete: "off" } do |f| %>
+  <div class="row form-user">
+    <div class="col-md-3">
+      <div class="panel-group panel-left">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <%= f.error_span :avatar %>
+            <div id="img-size-error" class="text-danger"></div>
+            <%= image_tag @user.avatar.url, id: "js-avatar-tag" %>
+          </div>
+          <div class="panel-heading">
+          <h4 class="avatar-title"><strong><%= t ".avatar" %></strong></h4>
+            <div class="btn btn-primary" id="btn-updload-avatar" title="<%= t ".upload" %>">
+              <i class="fa fa-upload"></i>
+            </div>
+            <%= f.file_field :avatar, id: "js-avatar-input" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="panel-group panel-right">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><strong><%= t ".create_user" %></strong></h4>
+          </div>
+          <div class="panel-body">
+            <div class="simple_form form-horizontal">
+              <div class="form-group">
+                <%= f.label :email, class: "control-label col-md-2" do %>
+                  <span class="text-danger">*</span>
+                  <%= t ".email" %>
+                <% end %>
+                <div class="col-md-9">
+                  <%= f.text_field :email, class: "form-control" %>
+                  <%= f.error_span :email %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :name, class: "control-label col-md-2" do %>
+                  <span class="text-danger">*</span>
+                  <%= t ".name" %>
+                <% end %>
+                <div class="col-md-9">
+                  <%= f.text_field :name, class: "form-control" %>
+                  <%= f.error_span :name %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :staff_type, class: "control-label col-md-2" do %>
+                  <%= t ".staff_type" %>
+                <% end %>
+                <div class="col-md-9">
+                  <%= f.select :staff_type, options_for_select(User.staff_types.keys.map {|key| [I18n.t("admin.users.index.staff_types.#{key}"), key]}, selected: @user.staff_type),
+                    {include_blank: t(".select_staff_type")}, class: "form-control select-select2 remove-padding" %>
+                  <%= f.error_span :staff_type %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :gender, class: "control-label col-md-2" do %>
+                  <%= t ".gender" %>
+                <% end %>
+                <div class="col-md-9">
+                  <%= f.select :gender, options_for_select(User.genders.keys.map {|key| [I18n.t("admin.users.form.genders.#{key}"), key]}, selected: @user.gender), {include_blank: t(".select_gender")}, class: "form-control select-select2 remove-padding" %>
+                  <%= f.error_span :gender %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :birthday, t(".birthday"), class: "control-label col-md-2" %>
+                <div class="col-md-9">
+                  <%= f.date_field :birthday, class: "form-control" %>
+                  <%= f.error_span :birthday %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :phone, t(".phone"), class: "control-label col-md-2" %>
+                <div class="col-md-9">
+                  <%= f.text_field :phone, class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group form-actions form-button-wrapper text-center">
+                <span>
+                  <%= f.button :button, type: "submit", title: t(".save"),
+                    class: "btn btn-sm btn-primary", name: nil do %>
+                    <i class="fa fa-arrow-right"></i>
+                    <%= t ".save" %>
+                  <% end %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

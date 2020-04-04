@@ -1,0 +1,40 @@
+en:
+  admin:
+    categories:
+      index:
+        categories_management: "Category Management"
+        list_categories: "List categories"
+        index: "Index"
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        action: "Action"
+        new_workspace: "New workspace"
+        status_work:
+          "true": "Active"
+          "false": "Inactive"
+      category:
+        edit: "Edit"
+        show: "Detail"
+        delete: "Delete"
+      new:
+        create_title: "Add new category"
+      edit:
+        create_title: "Edit category"
+      form:
+        name: "Name"
+        content: "Content"
+        status: "Status"
+        save: "Add"
+      update:
+        update_success: "Update success"
+        update_failed: "Update failed"
+      create:
+        create_success: "Create success"
+        create_fail: "Create failed"
+      destroy:
+        success: "Destroy success"
+        failed: "Destroy failed"
+        sure: "Are you sure aaa?"
+      detail:
+        title: "Detail category %{category}"

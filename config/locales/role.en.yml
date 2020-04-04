@@ -1,0 +1,33 @@
+en:
+  admin:
+    roles:
+      index:
+        role_management: "Roles management"
+        list_roles: "List roles"
+        new_role: "Add role"
+        index: "Index"
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        action: "Action"
+        is_enable:
+          "true": "Active"
+          "false": "Inactive"
+      new:
+        create_title: "Create role"
+        edit_title: "Edit role"
+      form:
+        name: "Name"
+        content: "Content"
+        status: "Status"
+        save: "Save"
+      create:
+        success: "Create success"
+        fail: "Create failed"
+        not_found: "Not found"
+      update:
+        success: "Update success"
+        fail: "Update failed"
+      role:
+        edit: "Edit"
+        delete: "Delete"

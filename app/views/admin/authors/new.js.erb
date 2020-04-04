@@ -1,0 +1,6 @@
+$('#author-modal').html('<%= j render "form", title: I18n.t("admin.roles.new.create_title") %>')
+$('#author-modal').modal('show');
+$('.datepicker').datepicker({
+  minDate: 0,
+  dateFormat: 'yyyy-mm-dd',
+});

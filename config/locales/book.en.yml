@@ -1,0 +1,43 @@
+en:
+  admin:
+    books:
+      index:
+        index: "Index"
+        name: "Name"
+        description: "Description"
+        money: "Price"
+        quantity: "Quantity"
+        author: "Author"
+        action: "Action"
+        book_management: "Book management"
+        list_books: "List books"
+        new_books: "New book"
+      new:
+        new_books: "New book"
+      form:
+        image: "Image"
+        upload: "Upload"
+        create_book: "Create book"
+        name: "Name"
+        description: "Description"
+        money: "Price"
+        quantity: "Quantity"
+        publisher: "Publisher"
+        version: "Version"
+        save: "Save"
+        select_author: "Select author"
+        author: "Author"
+        category: "Category"
+        status: "Status"
+        not_found: "Not found"
+      edit:
+        edit_books: "Edit book"
+      create:
+        success: "Create success"
+        fail: "Create failed"
+      update:
+        success: "Update success"
+        fail: "Update faied"
+      destroy:
+        success: "Delete success"
+        fail: "Delete failed"

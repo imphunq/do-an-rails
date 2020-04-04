@@ -1,0 +1,40 @@
+vi:
+  admin:
+    categories:
+      index:
+        categories_management: "Quản lý thể loại"
+        list_categories: "Danh sách thể loại"
+        index: "STT"
+        name: "Tên thể loại"
+        description: "Mô tả"
+        status: "Trạng thái"
+        action: "Hành động"
+        new_workspace: "Thêm thể loại"
+        status_work:
+          "true": "Hoạt động"
+          "false": "Không hoạt động"
+      category:
+        edit: "Chỉnh sửa"
+        show: "Chi tiết"
+        delete: "Xóa"
+      new:
+        create_title: "Tạo mới thể loại"
+      edit:
+        create_title: "Chỉnh sửa thể loại"
+      form:
+        name: "Tên"
+        content: "Nội dung"
+        status: "Trạng thái"
+        save: "Thêm mới"
+      update:
+        update_success: "Cập nhật thành công"
+        update_failed: "Cập nhật thất bại"
+      create:
+        create_success: "Tạo mới thành công"
+        create_fail: "Tạo mới thất bại"
+      destroy:
+        success: "Xóa thành công"
+        failed: "Xóa thất bại"
+        sure: "Bạn có muốn xóa không?"
+      detail:
+        title: "Chi tiết thể loại %{category}"

@@ -1,0 +1,65 @@
+<div class="header-area">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-sm-6 col-xs-6">
+        <div class="header-logo">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.png" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 hidden-xs">
+        <div class="mainmenu text-center">
+          <nav>
+            <ul id="nav">
+              <li>
+                <%= link_to "HOME", root_path %>
+              </li>
+              <li><a href="#">Category</a>
+                <ul class="sub-menu">
+                  <% @categories.each do |category| %>
+                    <li><%= link_to category.name, category_path(category) %></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li><a href="shop.html">REVIEW BOOK</a></li>
+              <li><a href="about.html">ABOUT AUTHOR</a></li>
+              <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-2 hidden-sm">
+        <div class="header-right">
+          <ul>
+            <li>
+              <a href="account.html"><i class="fas fa-user"></i></a>
+            </li>
+            <li class="shoping-cart">
+              <a href="#">
+                <i class="fas fa-cart-plus"></i>
+                <span class="qty-cart"><%= current_quantity %></span>
+              </a>
+              <div class="add-to-cart-product">
+                <% if session[:carts] %>
+                  <%= render "layouts/cart_index" %>
+                <% else %>
+                  <div class="text-danger text-center not-product">
+                    <%= t "not_product" %>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+            <li class="signin">
+              <% unless user_signed_in? %>
+                <%= link_to "Đăng nhập", signin_path %>
+              <% else %>
+                <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

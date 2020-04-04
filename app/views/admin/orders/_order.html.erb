@@ -1,0 +1,37 @@
+<tr>
+  <td class="text-center" >
+    <%= create_index params[:page], order_counter, Settings.paginate.show_15 %>
+  </td>
+  <td class="text-center"><strong><%= order.user.name %></strong></td>
+  <td class="text-center"><%= order.address %></td>
+  <td class="text-center"><%= I18n.l(order.created_at, formats: :default) %></td>
+  <td class="text-center">
+    <p class="label label_order_<%= order.status %>">
+      <%= order.enable_status_i18n %>
+    </p>
+  </td>
+  <td class="text-center" >
+    <div class="btn-group option">
+      <%= link_to admin_order_path(order), class: "btn btn-xs btn-primary button-custom",
+        title: t(".show"), remote: true do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
+    </div>
+    <% if order.pending? || order.refuse? %>
+      <div class="btn-group option">
+        <%= link_to admin_order_path(order, status: :accept), method: :put, class: "btn btn-xs btn-success button-custom",
+          title: t(".accept") do %>
+          <i class="fa fa-check"></i>
+        <% end %>
+      </div>
+    <% end %>
+    <% if order.pending? || order.accept? %>
+      <div class="btn-group option">
+        <%= link_to admin_order_path(order, status: :refuse), method: :put, class: "btn btn-xs btn-danger button-custom",
+          title: t(".reject") do %>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </td>
+</tr>

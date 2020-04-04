@@ -1,0 +1,56 @@
+<div class="col-md-3 col-sm-3 col-xs-12">
+  <div class="shop-widget">
+    <div class="shop-widget-top">
+      <aside class="widget widget-categories">
+        <h2 class="sidebar-title text-center">CATEGORY</h2>
+        <ul class="sidebar-menu">
+          <% @categories.each do |category| %>
+            <li>
+              <%= link_to category_path(category) do %>
+                 <i class="fas fa-angle-double-right"></i>
+                  <%= category.name %>
+                  <span>(<%= category.books.size %>)</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </aside>
+      <aside class="widget shop-filter">
+        <h2 class="sidebar-title text-center">PRICE SLIDER</h2>
+        <div class="info-widget">
+          <div class="price-filter">
+              <div id="slider-range" class="range-bar"></div>
+              <div class="price-slider-amount">
+                  <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+                  <div class="widget-buttom">
+                      <input type="submit"  value="Filter"/>
+                      <input type="reset" value="CLEAR" />
+                  </div>
+              </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="shop-widget-bottom">
+      <aside class="widget widget-seller">
+        <h2 class="sidebar-title">TOP SELLERS</h2>
+        <div class="single-seller">
+          <div class="seller-img">
+              <img src="img/shop/1.jpg" alt="" />
+          </div>
+          <div class="seller-details">
+              <a href="shop.html"><h5>Cold mountain</h5></a>
+              <h5>$ 50.00</h5>
+              <ul>
+                  <li><i class="fas fa-star icolor"></i></li>
+                  <li><i class="fas fa-star icolor"></i></li>
+                  <li><i class="fas fa-star icolor"></i></li>
+                  <li><i class="fas fa-star icolor"></i></li>
+                  <li><i class="fas fa-star icolor"></i></li>
+              </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

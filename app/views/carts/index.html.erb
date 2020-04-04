@@ -1,0 +1,80 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>PRODUCT DETAILS</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+              Home
+            <% end %>
+          </li>
+          <li>Product Details</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="shopping-cart-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wishlist-table-area table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th class="product-image"><%= t "image" %></th>
+                  <th class="t-product-name"><%= t "product_name" %></th>
+                  <th class="product-unit-price"><%= t "unit_price" %></th>
+                  <th class="product-quantity"><%= t "quantity" %></th>
+                  <th class="product-subtotal"><%= t "sub_total" %></th>
+                  <th class="product-remove"><%= t "action" %></th>
+                </tr>
+              </thead>
+              <tbody id="list-cart">
+                <% if session[:carts].present? %>
+                  <%= render partial: "carts/cart", collection: @carts %>
+                <% else %>
+                  <tr class="text-danger text-center not-product">
+                    <td colspan="6"><%= t "not_product" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+        <div class="shopingcart-bottom-area">
+          <%= link_to root_path, class: "left-shoping-cart" do %>
+            CONTINUE SHOPPING
+          <% end %>
+          <% if session[:carts].present? %>
+            <div class="shopingcart-bottom-area pull-right clear-cart">
+              <%= link_to destroy_all_cart_carts_path, method: :delete, remote: true, class: "right-shoping-cart" do %>
+                CLEAR SHOPPING CART
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% if session[:carts].present? %>
+  <div class="discount-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 checkout-block">
+          <div class="subtotal-main-area">
+            <div class="subtotal-area">
+                <h2>GRAND TOTAL<span class="total_price_cart"><%= format_money_amount total_price %></span></h2>
+            </div>
+            <%= link_to new_order_path do %>
+              <%= t "checkout" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

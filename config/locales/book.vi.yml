@@ -1,0 +1,43 @@
+vi:
+  admin:
+    books:
+      index:
+        index: "STT"
+        name: "Tên sách"
+        description: "Mô tả"
+        money: "Đơn giá"
+        quantity: "Số lượng"
+        author: "Tác giả"
+        action: "Thao tác"
+        book_management: "Quản lý sách"
+        list_books: "Danh sách sách"
+        new_books: "Thêm mới sách"
+      new:
+        new_books: "Thêm mới sách"
+      form:
+        image: "Hình ảnh"
+        upload: "Tải lên"
+        create_book: "Tạo mới sách"
+        name: "Tên sách"
+        description: "Mô tả"
+        money: "Đơn giá"
+        quantity: "Số lượng"
+        publisher: "Nhà xuất bản"
+        version: "Phiên bản"
+        save: "Lưu"
+        select_author: "Chọn tác giả"
+        author: "Tác giả"
+        category: "Thể loại"
+        status: "Trạng thái"
+        not_found: "Không tìm thấy sách này"
+      edit:
+        edit_books: "Sửa thông tin sách"
+      create:
+        success: "Thêm mới thành công"
+        fail: "Thêm mới thất bại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa bản ghi thành công"
+        fail: "Xóa bản ghi thất bại"
