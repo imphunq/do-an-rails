@@ -1,0 +1,40 @@
+<% shopping_cart.each do |cart| %>
+  <div class="cart-product">
+    <div class="cart-product-image">
+      <%= link_to cart_path(cart.book) do %>
+        <%= image_tag cart.book.image.url %>
+      <% end %>
+    </div>
+    <div class="cart-product-info">
+      <p>
+        <span><%= cart.quantity %></span>
+        x
+        <%= link_to cart.book.name, book_path(cart.book) %>
+      </p>
+      <span class="cart-price"><%= format_money_amount cart.book.money %></span>
+    </div>
+    <div class="cart-product-remove">
+      <%= link_to cart_path(cart.book), method: :delete, remote: true do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="cart-checkout">
+  <%= link_to carts_path do %>
+    <%= t "detail_cart" %>
+    <i class="fas fa-chevron-right"></i>
+  <% end %>
+</div>
+<div class="total-cart-price">
+  <div class="cart-product-line">
+    <span><%= t "total" %></span>
+    <span class="total"><%= format_money_amount total_price %></span>
+  </div>
+</div>
+<div class="cart-checkout">
+  <%= link_to new_order_path do %>
+    <%= t "checkout" %>
+    <i class="fas fa-chevron-right"></i>
+  <% end %>
+</div>

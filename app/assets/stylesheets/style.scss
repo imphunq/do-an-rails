@@ -1,0 +1,97 @@
+body {
+  padding: 0 !important;
+}
+.shop-info-icon {
+  line-height: 185px !important;
+}
+
+.shop-info-area {
+  background: rgba(0, 0, 0, 0) url('banner.jpg') no-repeat scroll center center !important;
+}
+
+.nav {
+  display: block;
+}
+
+.price {
+  color: white;
+}
+
+.single-banner-image-wrapper img {
+  width: 100%;
+  height: 200px;
+}
+
+.breadcrumbs-area {
+  background: rgba(0, 0, 0, 0) url(body-top.jpg) no-repeat scroll center center !important;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.out-of-stock span {
+  background: red;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.container-fluid {
+  width: 70%;
+}
+
+.signin {
+  margin-left:1px;
+}
+
+li.signin a {
+  font-size: 16px !important;
+}
+
+.login-account input {
+  outline: none;
+}
+
+.form-row, .actions {
+  margin-bottom: 15px !important;
+}
+
+.toast-message {
+  font-size: 12px;
+}
+
+.remove-wishlist i{
+  color: red;
+}
+
+.cart-quantity  {
+  width: 100px !important;
+  outline: none;
+}
+
+#quantity-wanted-p {
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.swal2-popup.swal2-modal.swal2-show {
+    font-size: 1.6rem;
+}
+
+.not-product {
+  height: 200px;
+  line-height: 200px;
+}
+
+.product-cart-img img {
+  width: 75%;
+  height: 150px;
+}
+
+.btn-order {
+  background-color: #32b5f3 !important;
+  color: white !important;
+  border: 1px solid #32b5f3;
+}
+
+.btn-order:hover {
+  background-color: white !important;
+  color: #32b5f3 !important;
+}

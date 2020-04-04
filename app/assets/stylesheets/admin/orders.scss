@@ -1,0 +1,28 @@
+.label_order_pending {
+  background-color: #ffc107;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.label_order_accept {
+  background-color: #aad178;
+  color: white;
+  border-radius: 5px;
+}
+
+.label_order_refuse {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.title-order h4{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.text-center-td {
+  text-align: center;
+}

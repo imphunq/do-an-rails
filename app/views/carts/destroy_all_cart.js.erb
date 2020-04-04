@@ -1,0 +1,11 @@
+Swal.fire({
+    icon: 'success',
+    title: I18n.t('delete_cart'),
+    showConfirmButton: false,
+    timer: 2000
+})
+$('.qty-cart').html('<%= current_quantity %>');
+$('.add-to-cart-product').html('<div class="text-danger text-center not-product"><%= t "not_product" %></div>');
+$('#list-cart').html('<tr class="text-danger text-center not-product"><td colspan="6"><%= t "not_product"%></td></tr>');
+$('.clear-cart').hide();
+$('.discount-area').hide();

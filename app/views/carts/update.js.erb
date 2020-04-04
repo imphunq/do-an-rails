@@ -1,0 +1,25 @@
+<% if flash[:danger] %>
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: '<%= flash[:danger] %>'
+  })
+<% else %>
+  Swal.fire({
+    icon: 'success',
+    title: I18n.t('update_cart'),
+    showConfirmButton: false,
+    timer: 1500
+  })
+  $('.qty-cart').html('<%= current_quantity %>');
+  <% if session[:carts].present? %>
+    $('.add-to-cart-product').html('<%= j render "layouts/cart_index" %>');
+    $('#list-cart').html('<%= j render partial: "carts/cart", collection: shopping_cart %>');
+    $('.total_price_cart').html('<%= format_money_amount total_price %>')
+  <% else %>
+    $('.add-to-cart-product').html('<div class="text-danger text-center not-product"><%= t "not_product" %></div>');
+    $('#list-cart').html('<tr class="text-danger text-center not-product"><td colspan="6"><%= t "not_product"%></td></tr>');
+    $('.clear-cart').hide();
+    $('.discount-area').hide();
+  <% end %>
+<% end %>

@@ -1,0 +1,9 @@
+en:
+  wishlists:
+    create:
+      not_found: "Not found"
+      success: "Add to wishlist success"
+      fail: "Add to wishlist failed"
+    destroy:
+      success: "Remove from wishlist success"
+      fail: "Remove from wishlist failed"

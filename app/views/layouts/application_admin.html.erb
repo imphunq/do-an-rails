@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'admin/admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin/admin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <%= render partial: "layouts/navbar_admin" %>
+      <%= render partial: "layouts/menu_admin" %>
+      <%= render partial: "layouts/flash_messages", flash: flash %>
+      <div class="content-wrapper">
+        <section class="content">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
+  I18n.locale = "<%= I18n.locale %>";
+</script>

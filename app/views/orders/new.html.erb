@@ -1,0 +1,110 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>PRODUCT DETAILS</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+              Home
+            <% end %>
+          </li>
+          <li>Product Details</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="check-out-area section-padding">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="panel-heading" id="headingTwo">
+          <h2 class="panel-title">
+            Billing Information
+          </h2>
+        </div>
+        <div class="panel-body">
+          <%= form_for @order do |f| %>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="form-row">
+                  <%= text_field_tag :email, nil, placeholder: "Email Address *" %>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p class="form-row">
+                  <%= text_field_tag :name, nil, placeholder: "Fullname *" %>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p class="form-row">
+                  <%= f.text_field :phone, placeholder: "Phone *" %>
+                </p>
+              </div>
+              <div class="col-md-12">
+                <p class="form-row">
+                  <%= f.text_field :address, placeholder: "Address *" %>
+                  <%= f.hidden_field :total, value: total_price %>
+                </p>
+              </div>
+              <div class="col-md-3">
+                <p class="form-row">
+                  <%= f.submit "Place Order", class: "btn btn-default btn-order"  %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="panel-heading" role="tab" id="headingFive">
+          <h2 class="panel-title">
+            Order Review
+          </h2>
+        </div>
+        <div class="panel-body no-padding">
+          <div class="order-review" id="checkout-review">
+            <div class="table-responsive" id="checkout-review-table-wrapper">
+              <table class="data-table" id="checkout-review-table">
+                <thead>
+                  <tr>
+                    <th rowspan="1"><%= t "product_name" %></th>
+                    <th colspan="1"><%= t "unit_price" %></th>
+                    <th rowspan="1"><%= t "quantity" %></th>
+                    <th colspan="1"><%= t "sub_total" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if session[:carts] %>
+                  <% shopping_cart.each do |item| %>
+                    <tr>
+                      <td><h3 class="product-name"><%= item.book_name %></h3></td>
+                      <td><span class="cart-price"><span class="check-price"><%= format_money_amount item.money %></span></span></td>
+                      <td><%= item.quantity %></td>
+                      <!-- sub total starts here -->
+                      <td><span class="cart-price"><span class="check-price"><%= format_money_amount item.money*item.quantity %></span></span></td>
+                    </tr>
+                  <% end %>
+                  <% else %>
+                    <tr class="text-danger text-center not-product">
+                      <td colspan="4"><%= t "not_product" %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3"><strong>Grand Total</strong></td>
+                    <td><strong><span class="check-price"><%= format_money_amount total_price %></span></strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

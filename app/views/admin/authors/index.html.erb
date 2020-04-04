@@ -1,0 +1,53 @@
+<div class="content-header">
+  <div class="header-section">
+    <h1>
+      <%= t ".author_management" %>
+    </h1>
+  </div>
+</div>
+<div class="block full">
+  <div class="block-title">
+    <p><strong><%= t ".list_authors" %></strong></p>
+  </div>
+  <div class="table-responsive test-created-table">
+    <div class="dataTables_wrapper">
+      <div class="row add-new">
+        <div class="col-md-3 mb-10 remove-padding pb-4">
+          <div>
+            <%= link_to new_admin_author_path, class: "btn btn-primary margin-left-5 new-cate", remote: true do %>
+              <i class="fa fa-plus"></i> <%= t ".new_author" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th class="text-center"><%= t ".index" %></th>
+                    <th class="text-center"><%= t ".name" %></th>
+                    <th><%= t ".description" %></th>
+                    <th class="text-center"><%= t ".status" %></th>
+                    <th class="text-center"><%= t ".action" %></th>
+                  </tr>
+                </thead>
+                <tbody id="list-authors">
+                  <%= render @authors %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pagination">
+      <%= paginate @authors %>
+    </div>
+  </div>
+</div>
+<div id="author-modal" class="modal fade" data-backdrop="static"></div>
+
+

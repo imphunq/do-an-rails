@@ -1,0 +1,40 @@
+<div role="tabpanel" class="tab-pane fade in active" id="arrival">
+  <div class="featured-product-list indicator-style">
+    <div class="row">
+      <% @books.each do |book| %>
+        <% if user_signed_in? %>
+          <% wishlist = Wishlist.find_by user_id: current_user.id, book_id: book.id %>
+        <% end %>
+        <div class="col-md-3">
+          <div class="single-banner">
+            <div class="product-wrapper">
+              <%= link_to book_path(book), class: "single-banner-image-wrapper check-visited", data: {book_id: book.id} do %>
+                <%= image_tag book.image.url %>
+                <div class="price"><%= format_money_amount book.money %></div>
+                <div class="rating-icon">
+                  <i class="fas fa-star icolor"></i>
+                  <i class="fas fa-star icolor"></i>
+                  <i class="fas fa-star icolor"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              <% end %>
+              <div class="product-description">
+                <div class="functional-buttons button-reaction-<%= book.id %>">
+                  <%= render "button_book", book: book, wishlist: wishlist %>
+                </div>
+              </div>
+            </div>
+            <div class="banner-bottom text-center">
+              <%= link_to book.name, book_path(book), class: "check-visited", data: {book_id: book.id} %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div id="pagination">
+      <%= paginate @books %>
+    </div>
+  </div>
+</div>
+<div class="modal hide fade" id="productModal" role="dialog"></div>

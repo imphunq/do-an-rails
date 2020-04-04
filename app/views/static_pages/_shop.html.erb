@@ -1,0 +1,39 @@
+<div class="featured-product-area section-padding">
+  <h2 class="section-title">FEATURED PRODUCTS</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tab-menu">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="first-item active">
+              <%= link_to root_path(criteria: :default), remote: true, class: "default" do %>
+                New Arrival
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(criteria: :low_to_high), remote: true, class: "low_to_high" do %>
+                LOW TO HIGH
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(criteria: :high_to_low), remote: true, class: "high_to_low" do %>
+                LOW TO HIGH
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(criteria: :most_view), remote: true, class: "best_seller" do %>
+                MOST VIEW
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="product-list tab-content">
+        <%= render "static_pages/arrival" %>
+      </div>
+    </div>
+  </div>
+</div>

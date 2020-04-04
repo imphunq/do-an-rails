@@ -1,0 +1,14 @@
+role:
+  admin: "admin"
+  staff: "staff"
+  user: "user"
+paginate:
+  show_15: 15
+  show_16: 16
+max_length_category_name: 100
+
+currency:
+  separator: ","
+  delimiter: "."
+  unit: "VNĐ"
+  precision: 0

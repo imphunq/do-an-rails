@@ -1,0 +1,58 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="breadcrumbs">
+             <h2 class="text-center">LOGIN</h2>
+             <ul class="breadcrumbs-list">
+                <%= link_to root_path, title: "Return to Home" do %>
+                  Home
+                <% end %>
+                <li>Login</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="login-account section-padding">
+  <h2 class="text-center">Log in</h2>
+  <div class="container">
+    <div class="row row-login">
+      <div class="col-md-6 col-sm-6 mx-auto">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "create-account-form") do |f| %>
+          <h2 class="heading-title">
+              ALREADY RESIGTERED?
+          </h2>
+          <p class="form-row">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </p>
+
+          <p class="form-row">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </p>
+
+<!--           <% if devise_mapping.rememberable? %>
+  <div class="field">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
+<% end %> -->
+          <div class="actions">
+            <%= f.submit class: "btn-default" do %>
+              <span>
+                  <i class="fas fa-user left"></i>
+                  SIGN IN
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+        <p class="lost-password form-group">
+          <%= render "devise/shared/links" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

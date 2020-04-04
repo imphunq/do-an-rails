@@ -1,0 +1,50 @@
+en:
+  admin:
+    users:
+      index:
+        index: "Index"
+        name: "Full Name"
+        email: "Email"
+        staff_type: "Staff Type"
+        status: "Status"
+        action: "Action"
+        user_management: "User Management"
+        list_users: "List User"
+        new_users: "New User"
+        staff_types:
+          part_time: "Part-time"
+          full_time: "Full-time"
+        not_found: "Not found user"
+        login_success: "Login success"
+        logout_success: "Logout success"
+      user:
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        new_users: "New User"
+      form:
+        upload: "Upload"
+        create_user: "Create user"
+        email: "Email"
+        name: "Name"
+        staff_type: "Staff type"
+        gender: "Gender"
+        birthday: "Birthday"
+        phone: "Phone"
+        save: "Save"
+        avatar: "Avatar"
+        genders:
+          female: "Female"
+          male: "Male"
+          other: "Other"
+        select_staff_type: "Select staff type"
+        select_gender: "Select gender"
+      create:
+        success: "Create success"
+        fail: "Create fail"
+      update:
+        success: "Update success"
+        fail: "Update failed"
+      destroy:
+        success: "Destroy success"
+        fail: "Destroy failed"

@@ -1,0 +1,10 @@
+<% if flash[:success] %>
+  toastr.success("<%= flash[:success] %>")
+<% end %>
+<% if flash[:warning] %>
+  toastr.warning("<%= flash[:warning] %>")
+<% end %>
+<% if flash[:danger] %>
+  toastr.error("<%= flash[:danger] %>")
+<% end %>
+$('#list-authors').html('<%= j render @authors %>')

@@ -1,0 +1,93 @@
+.btn-primary {
+  background-color: #6ad2eb;
+  border-color: #1bbae1;
+  color: #ffffff;
+}
+
+.btn-success {
+  background-color: #aad178;
+  border-color: #7db831;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #ef8a80;
+  color: #ffffff;
+  border-color: #e74c3c;
+}
+
+.button-custom {
+  padding: 4px;
+}
+
+.button-custom-danger {
+  padding: 4px;
+  padding-left: 4px;
+  padding-right: 6px;
+}
+
+.no-bs-validation .is-valid, .no-bs-validation .is-invalid {
+    border-color: #ced4da;
+    background-image: inherit;
+}
+
+.no-bs-validation .is-valid:focus, .no-bs-validation .is-invalid:focus {
+    border-color: inherit;
+    box-shadow: 0 0 0 0.2rem #ced4da;
+}
+
+label.string.required abbr{
+  color: red;
+  text-decoration: none;
+  cursor: none;
+}
+
+.price-range-slider {
+  width:100%;
+  float:left;
+  padding:10px 20px;
+  .range-value {
+    margin:0;
+    input {
+      width:100%;
+      background:none;
+      color: #000;
+      font-size: 16px;
+      font-weight: initial;
+      box-shadow: none;
+      border: none;
+      margin: 20px 0 20px 0;
+    }
+  }
+
+  .range-bar {
+    border: none;
+    background: #000;
+    height: 3px;
+    width: 96%;
+    margin-left: 8px;
+
+    .ui-slider-range {
+      background:#06b9c0;
+    }
+
+    .ui-slider-handle {
+      border:none;
+      border-radius:25px;
+      background:#fff;
+      border:2px solid #06b9c0;
+      height:17px;
+      width:17px;
+      top: -0.52em;
+      cursor:pointer;
+    }
+    .ui-slider-handle + span {
+      background:#06b9c0;
+    }
+  }
+}
+/*--- /.price-range-slider ---*/
+
+span.out-stock {
+  background: red !important;
+}

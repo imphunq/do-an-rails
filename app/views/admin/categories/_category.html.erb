@@ -1,0 +1,33 @@
+<tr>
+  <td class="text-center" >
+    <%= create_index params[:page], category_counter, Settings.paginate.show_15 %>
+  </td>
+  <td><strong><%= category.name %></strong></td>
+  <td><%= raw category.description %></td>
+  <td class="text-center">
+    <p class="label label_category_<%= category.status %>">
+      <%= category.enable_status_i18n %>
+    </p>
+  </td>
+  <td class="text-center" >
+    <div class="btn-group option">
+      <%= link_to edit_admin_category_path(category), class: "btn btn-xs btn-primary button-custom",
+        title: t(".edit"), remote: true do %>
+        <i class="fa fa-pencil-alt" aria-hidden="true""></i>
+      <% end %>
+    </div>
+    <div class="btn-group option">
+      <%= link_to admin_category_path(category), class: "btn btn-xs btn-success button-custom",
+        title: t(".show"), remote: true do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
+    </div>
+    <div class="btn-group option">
+      <%= button_tag class: "btn btn-xs btn-danger delete-category-button button-custom-danger",
+        title: t(".delete"), data: {id: category.id, name: category.name} do %>
+        <i class="fa fa-trash icon"></i>
+      <% end %>
+    </div>
+    </div>
+  </td>
+</tr>

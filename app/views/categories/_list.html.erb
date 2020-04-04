@@ -1,0 +1,41 @@
+<div class="row">
+  <% @books.each do |book| %>
+    <div class="single-shop-product">
+      <div class="col-xs-12 col-sm-5 col-md-4">
+        <div class="left-item">
+          <%= link_to book_path(book), class: "single-banner-image-wrapper check-visited", data: {book_id: book.id} do %>
+            <%= image_tag book.image.url %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-7 col-md-8">
+        <div class="deal-product-content">
+          <h4>
+            <%= link_to book.name, book_path(book), class: "check-visited", data: {book_id: book.id} %>
+          </h4>
+          <div class="product-price">
+            <span class="new-price"><%= format_money_amount book.money %></span>
+          </div>
+          <div class="list-rating-icon">
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p><%= book.description.html_safe %></p>
+          <div class="availability">
+            <% if book.quantity > 0 %>
+              <span>In stock</span>
+              <span>
+                <%= link_to "Add to cart", carts_path(id: book.id, price: book.money, qty: 1), remote: true, method: :post, title: "Add to cart" %>
+              </span>
+            <% else %>
+              <span class="out-stock">Out of stock</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

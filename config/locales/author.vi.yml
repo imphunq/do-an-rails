@@ -1,0 +1,36 @@
+vi:
+  admin:
+    authors:
+      index:
+        author_management: "Quản lý tác giả"
+        list_authors: "Danh sách tác giả"
+        new_author: "Thêm tác giả"
+        index: "STT"
+        name: "Tên tác giả"
+        description: "Mô tả"
+        status: "Trạng thái"
+        action: "Thao tác"
+        status_work:
+          "true": "Hoạt động"
+          "false": "Không hoạt động"
+      form:
+        name: "Tên tác giả"
+        address: "Địa chỉ"
+        content: "Mô tả"
+        status: "Trạng thái"
+        save: "Lưu"
+      create:
+        success: "Tạo mới thành công"
+        fail: "Tạo mới thất bại"
+      edit:
+        create_title: "Chỉnh sửa tác giả"
+        not_found: "Không tồn tại tác giả này"
+      author:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa bản ghi thành công"
+        fail: "Xóa bản ghi thất bại"

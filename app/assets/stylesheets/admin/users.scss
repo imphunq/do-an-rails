@@ -1,0 +1,66 @@
+img#js-avatar-tag, img#js-image-tag {
+  max-width: 100%;
+}
+
+.form-user {
+  font-size: 14px;
+  width: 88%;
+  margin-top: 30px;
+  padding-top: 50px;
+  background-color: #fff;
+  margin: auto !important;
+}
+
+.form-user h4 {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.form-user .col-md-3 {
+  margin-left: 15%;
+}
+
+.form-user .col-md-7 {
+  margin-left: 20px;
+}
+
+#js-avatar-input, #js-image-input {
+  display: none;
+}
+
+.form-user #btn-updload-avatar, #btn-upload-image-book {
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
+
+.avatar-title {
+  margin-top: 20px;
+}
+
+.select-select2{
+  width: 100%;
+  font-size: 14px;
+}
+
+.remove-padding {
+  padding: 0;
+}
+
+.select2-selection--single {
+  height: 38px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 2 !important;
+}
+
+.select2-selection__choice {
+  background-color: #6ad2eb !important;
+  color: #fff !important;
+  border: 1px solid #6ad2eb !important;
+}
+
+.select2-selection__choice__remove {
+  color: #fff !important;
+}

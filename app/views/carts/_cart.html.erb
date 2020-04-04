@@ -1,0 +1,31 @@
+<tr>
+  <td class="product-image product-cart-img">
+    <%= link_to book_path(cart.book) do %>
+        <%= image_tag cart.book_image.url %>
+    <% end %>
+  </td>
+  <td class="t-product-name">
+    <h3>
+      <%= link_to book_path(cart.book) do %>
+        <%= cart.book_name %>
+      <% end %>
+    </h3>
+  </td>
+  <td class="product-unit-price">
+      <p><%= format_money_amount cart.money %></p>
+  </td>
+  <td class="product-quantity product-cart-details">
+    <input type="number" value="<%= cart.quantity %>" data-book-id="<%= cart.book.id %>" data-old-value="<%= cart.quantity %>" class="update-cart-book cart-pro-book-<%= cart.book.id %>">
+  </td>
+  <td class="product-quantity">
+    <p><%= format_money_amount cart.money*cart.quantity %></p>
+  </td>
+  <td class="product-remove">
+    <%= link_to cart_path(cart.book, qty: cart.quantity), method: :put, remote: true do %>
+      <i class="fas fa-sync-alt"></i>
+    <% end %>
+    <%= link_to cart_path(cart.book), method: :delete, remote: true do %>
+        <i class="fas fa-times"></i>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,34 @@
+vi:
+  admin:
+    orders:
+      index:
+        order_management: "Quản lý đơn hàng"
+        list_orders: "Danh sách đơn hàng"
+        index: "#"
+        user_name: "Tên khách hàng"
+        address: "Địa chỉ"
+        phone: "Số điện thoại"
+        date: "Ngày mua"
+        status: "Trạng thái"
+        action: "Thao tác"
+        status_work:
+          pending: "Đang chờ"
+          accept: "Chấp nhận"
+          refuse: "Hủy bỏ"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      order:
+        accept: "Chấp nhận"
+        reject: "Hủy bỏ"
+        show: "Chi tiết"
+      detail:
+        order_detail: "Chi tiết đơn hàng"
+        name: "Tên khách hàng: "
+        address: "Địa chỉ: "
+        phone: "Số điện thoại: "
+        book_name: "Tên sách"
+        quantity: "Số lượng"
+        price: "Đơn giá"
+        info: "Thông tin đơn hàng"
+        date: "Ngày mua hàng: "

@@ -1,0 +1,36 @@
+en:
+  admin:
+    authors:
+      index:
+        author_management: "Author management"
+        list_authors: "List authors"
+        new_author: "New author"
+        index: "Index"
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        action: "Action"
+        status_work:
+          "true": "Active"
+          "false": "Inactive"
+      form:
+        name: "Name"
+        address: "Address"
+        content: "Content"
+        status: "Status"
+        save: "Save"
+      create:
+        success: "Create success"
+        fail: "Create fail"
+      edit:
+        create_title: "Edit author"
+        not_found: "Not found"
+      author:
+        edit: "Edit"
+        delete: "Delete"
+      update:
+        success: "Update success"
+        fail: "Update fail"
+      destroy:
+        success: "Delete success"
+        fail: "Delete failed"

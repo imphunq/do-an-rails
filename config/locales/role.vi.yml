@@ -1,0 +1,33 @@
+vi:
+  admin:
+    roles:
+      index:
+        role_management: "Quản lý vai trò người dùng hệ thống"
+        list_roles: "Danh sách vai trò trong hệ thống"
+        new_role: "Thêm vai trò"
+        index: "STT"
+        name: "Tên vai trò"
+        description: "Mô tả"
+        status: "Trạng thái"
+        action: "Hành động"
+        is_enable:
+          "true": "Hoạt động"
+          "false": "Không hoạt động"
+      new:
+        create_title: "Tạo mới vai trò"
+        edit_title: "Sửa thông tin vai trò"
+      form:
+        name: "Tên vai trò"
+        content: "Mô tả"
+        status: "Trạng thái"
+        save: "Lưu"
+      create:
+        success: "Tạo mới thành công"
+        fail: "Tạo mới thất bại"
+        not_found: "Không tìm thấy"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      role:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"

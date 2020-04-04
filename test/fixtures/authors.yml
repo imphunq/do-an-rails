@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthday: 2020-02-11
+  description: MyString
+  address: MyString
+  status: false
+
+two:
+  name: MyString
+  birthday: 2020-02-11
+  description: MyString
+  address: MyString
+  status: false

@@ -1,0 +1,16 @@
+<% if flash[:danger] %>
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: '<%= flash[:danger] %>'
+  })
+<% else %>
+  Swal.fire({
+    icon: 'success',
+    title: I18n.t('add_cart'),
+    showConfirmButton: false,
+    timer: 1500
+  })
+  $('.qty-cart').html('<%= current_quantity %>');
+  $('.add-to-cart-product').html('<%= j render "layouts/cart_index" %>');
+<% end %>

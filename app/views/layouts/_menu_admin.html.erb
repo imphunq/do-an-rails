@@ -1,0 +1,94 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="../../index3.html" class="brand-link">
+    <span class="brand-text font-weight-light"><%= t "admin_page" %></span>
+  </a>
+
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <%= image_tag current_user.avatar.url, class: "img-circle elevation-2" %>
+      </div>
+      <div class="info">
+        <a href="#" class="d-block"><%= current_user.name %></a>
+      </div>
+    </div>
+  </div>
+  <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            <%= t "dashboard" %>
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../../index.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Dashboard v1</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_categories_path, class: "nav-link" do %>
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            <%= t "category" %>
+          </p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_roles_path, class: "nav-link" do %>
+          <i class="fas fa-user-tag"></i>
+          <p>
+            <%= t "role" %>
+          </p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_authors_path, class: "nav-link" do %>
+          <i class="fas fa-user-edit"></i>
+          <p>
+            <%= t "author" %>
+          </p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_users_path, class: "nav-link" do %>
+          <i class="fas fa-users"></i>
+          <p>
+            <%= t "user" %>
+          </p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_books_path, class: "nav-link" do %>
+          <i class="fas fa-book-open"></i>
+          <p>
+            <%= t "book" %>
+          </p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_orders_path, class: "nav-link" do %>
+          <i class="fas fa-cart-plus"></i>
+          <p>
+            <%= t "order" %>
+          </p>
+        <% end %>
+      </li>
+<!--       <li class="nav-item">
+        <a href="../widgets.html" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            Widgets
+            <span class="right badge badge-danger">New</span>
+          </p>
+        </a>
+      </li> -->
+    </ul>
+  </nav>
+</aside>

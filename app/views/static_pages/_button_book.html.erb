@@ -1,0 +1,15 @@
+<%= link_to carts_path(id: book.id, price: book.money, qty: 1), remote: true, method: :post, title: "Add to cart" do %>
+  <i class="fas fa-shopping-cart"></i>
+<% end %>
+  <% if user_signed_in? && book.wishlist_by_user?(current_user) %>
+    <%= link_to wishlist_path(wishlist, book_id: book.id), method: :delete, remote: true, title: "Remove from Wishlist", class: "remove-wishlist" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to wishlists_path(book_id: book.id), method: :post, remote: true, title: "Add to Wishlist", class: "add-wishlist" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% end %>
+<%= link_to "#", remote: true do %>
+  <i class="fas fa-compress"></i>
+<% end %>

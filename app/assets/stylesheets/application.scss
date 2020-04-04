@@ -1,0 +1,33 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require "font.scss"
+ *= require toastr
+ *= require "admin/toastr.min.css"
+ *= require sweetalert2.min.css
+ *= require home/css-font.css
+ *= require home/bootstrap.min.css
+ *= require home/jquery-ui.min.css
+ *= require home/meanmenu.min.css
+ *= require home/font-awesome.min.css
+ *= require home/pe-icon-7-stroke.css
+ *= require home/flaticon.css
+ *= require home/venobox.css
+ *= require home/nivo-slider.css
+ *= require home/preview.css
+ *= require home/owl.carousel.css
+ *= require home/style.css
+ *= require home/responsive.css
+ *= require "style.scss"
+ */

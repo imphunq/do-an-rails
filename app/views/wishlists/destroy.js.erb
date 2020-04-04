@@ -1,0 +1,14 @@
+<% if flash[:success] %>
+  toastr.success("<%= flash[:success] %>")
+<% end %>
+<% if flash[:warning] %>
+  toastr.warning("<%= flash[:warning] %>")
+<% end %>
+<% if flash[:danger] %>
+  toastr.error("<%= flash[:danger] %>")
+<% end %>
+<% if params[:page_show].present? %>
+  $('.add-to-wishlist').html('<%= j render "books/add_wishlist", book: @book %>');
+<% else %>
+  $('.button-reaction-<%= @book.id %>').html('<%= j render "static_pages/button_book", book: @book, wishlist: @wishlist %>');
+<% end %>

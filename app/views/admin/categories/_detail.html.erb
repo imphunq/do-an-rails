@@ -1,0 +1,32 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="text-center">
+        <h4><strong class="uppercase"><%= t(".title", category: @category.name) %></strong></h4>
+      </div>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <table class="table table-borderless table-striped table-vcenter">
+        <tbody>
+          <tr>
+            <td class="title-td-20percent"><strong><%= t ".name" %></strong></td>
+            <td><%= @category.name %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t ".description" %></strong></td>
+            <td class="des-workspace"><%= raw @category.description %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t ".status" %></strong></td>
+            <td>
+              <p class="label label_category_<%= @category.status %> detail_category_status">
+                <%= @category.enable_status_i18n %>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

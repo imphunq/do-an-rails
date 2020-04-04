@@ -1,0 +1,34 @@
+<% @books.each do |book| %>
+  <% if user_signed_in? %>
+    <% wishlist = Wishlist.find_by user_id: current_user.id, book_id: book.id %>
+  <% end %>
+  <div class="shop-single-product-area">
+    <div class="col-md-4 col-sm-6">
+      <div class="single-banner">
+        <div class="product-wrapper">
+          <%= link_to book_path(book), class: "single-banner-image-wrapper check-visited", data: {book_id: book.id} do %>
+            <%= image_tag book.image.url %>
+            <div class="price"><%= format_money_amount book.money %></div>
+          <% end %>
+          <div class="product-description">
+            <div class="functional-buttons button-reaction-<%= book.id %>">
+              <%= render "static_pages/button_book", book: book, wishlist: wishlist %>
+            </div>
+          </div>
+        </div>
+        <div class="banner-bottom text-center">
+          <div class="banner-bottom-title">
+            <%= link_to book.name, book_path(book), class: "check-visited", data: {book_id: book.id} %>
+          </div>
+          <div class="rating-icon">
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star icolor"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

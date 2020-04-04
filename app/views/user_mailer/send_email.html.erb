@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3><%= t "hello" %><%= @user.name %></h3>
+    <h3><%= t "your_order"  %><%= link_to "Write", root_url %></h3>
+    <div class="row">
+      <div class="wishlist-table-area table-responsive">
+        <table border="1" cellpadding="0" cellspacing="0">
+          <thead>
+            <tr>
+              <th class="t-product-name" style="text-align: center; padding: 12px 30px;"><%= t "product_name" %></th>
+              <th class="product-unit-price" style="text-align: center; padding: 12px 30px;"><%= t "unit_price" %></th>
+              <th class="product-quantity" style="text-align: center; padding: 12px 12px;"><%= t "quantity" %></th>
+              <th class="product-subtotal" style="text-align: center; padding: 12px 30px;"><%= t "sub_total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @carts.each do |cart| %>
+              <tr>
+                <td class="t-product-name" style="text-align: center;">
+                  <h3>
+                    <%= link_to book_url(id: cart.book_id) do %>
+                      <%= cart.book_name %>
+                    <% end %>
+                  </h3>
+                </td>
+                <td class="product-unit-price" style="text-align: center;">
+                    <p><%= format_money_amount cart.money %></p>
+                </td>
+                <td class="product-quantity product-cart-details" style="text-align: center;">
+                  <p><%= cart.quantity %></p>
+                </td>
+                <td class="product-quantity" style="text-align: center;">
+                  <p><%= format_money_amount cart.money*cart.quantity %></p>
+                </td>
+              </tr>
+          <% end %>
+          <tr>
+            <td style="text-align: center; padding: 12px 30px;"><%= t "sub_total" %></td>
+            <td colspan="3" style="text-align: right; padding: 12px 30px;"><%= format_money_amount @total %></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

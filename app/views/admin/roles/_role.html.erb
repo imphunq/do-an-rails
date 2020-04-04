@@ -1,0 +1,27 @@
+<tr>
+  <td class="text-center" >
+    <%= create_index params[:page], role_counter, Settings.paginate.show_15 %>
+  </td>
+  <td class="text-center"><strong><%= role.name %></strong></td>
+  <td><%= raw role.description %></td>
+  <td class="text-center">
+    <p class="label label_category_<%= role.enable %>">
+      <%= role.enable_status_i18n %>
+    </p>
+  </td>
+  <td class="text-center" >
+    <div class="btn-group option">
+      <%= link_to edit_admin_role_path(role), class: "btn btn-xs btn-primary button-custom",
+        title: t(".edit"), remote: true do %>
+        <i class="fa fa-pencil-alt" aria-hidden="true""></i>
+      <% end %>
+    </div>
+    <div class="btn-group option">
+      <%= button_tag class: "btn btn-xs btn-danger delete-role-button button-custom-danger",
+        title: t(".delete"), data: {id: role.id, name: role.name} do %>
+        <i class="fa fa-trash icon"></i>
+      <% end %>
+    </div>
+    </div>
+  </td>
+</tr>

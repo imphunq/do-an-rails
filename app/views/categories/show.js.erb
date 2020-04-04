@@ -1,0 +1,9 @@
+<% if params[:view] == 'grid' %>
+  $('.shopping-page #menu1').removeClass('in active');
+  $('.shopping-page #home').addClass('in active');
+  $('.shopping-page #home').html('<%= j render "categories/grid" %>');
+<% else %>
+  $('.shopping-page #home').removeClass('in active');
+  $('.shopping-page #menu1').addClass('in active');
+  $('.shopping-page #menu1').html('<%=j render "categories/list" %>');
+<% end %>
