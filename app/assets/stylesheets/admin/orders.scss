@@ -26,3 +26,12 @@
 .text-center-td {
   text-align: center;
 }
+
+a.dropdown-item.unseen_false {
+  background: #f0f0f0;
+}
+
+a.dropdown-item.unseen_true {
+  background: white;
+}
+

@@ -34,3 +34,5 @@ vi:
       default: "%d/%m/%Y"
       date_month_year_concise: "%d-%m-%Y"
       year_month_date_concise: "%Y-%m-%d"
+  no-data: "Không có thông báo nào"
+  order_noti: "%{user} vừa đặt hàng từ website của bạn"

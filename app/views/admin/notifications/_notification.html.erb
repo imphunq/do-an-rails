@@ -1,0 +1,7 @@
+<div class="dropdown-divider"></div>
+<%= link_to admin_orders_path, class: "dropdown-item unseen_#{notification.read}", data: {id: notification.id} do %>
+  <%= image_tag notification.user.avatar.url, class: "ava-noti" %><p class="message-noti"><%= notification.messages %></p>
+  <br>
+  <span class="text-muted text-date"><%= I18n.l notification.created_at %> | </span>
+  <span class="text-muted text-date"><%= time_ago_in_words(notification.created_at, include_seconds: true) %></span>
+<% end %>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     resources :orders
     resources :categories, only: :show
+    resources :notifications
     # get "/modalbook", to: "static_pages#modalbook"
     namespace :admin do
       root 'static_pages#index'
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
       resources :users
       resources :books
       resources :orders
+      resources :notifications, only: :update
     end
   end
+  mount ActionCable.server => '/cable'
 end
