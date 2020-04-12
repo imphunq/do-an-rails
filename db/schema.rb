@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_042201) do
+ActiveRecord::Schema.define(version: 2020_04_08_155121) do
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(version: 2020_03_17_042201) do
     t.index ["reset_password_token"], name: "index_controllers_on_reset_password_token", unique: true
   end
 
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "messages"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "read", default: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "book_id"
     t.bigint "order_id"
@@ -143,6 +152,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_042201) do
   add_foreign_key "books", "authors"
   add_foreign_key "category_types", "books"
   add_foreign_key "category_types", "categories"
+  add_foreign_key "notifications", "users"
   add_foreign_key "order_details", "books"
   add_foreign_key "order_details", "orders"
   add_foreign_key "orders", "users"

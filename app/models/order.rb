@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  after_create_commit :notify
+
   has_many :order_details, dependent: :destroy
   belongs_to :user
 
@@ -8,5 +10,11 @@ class Order < ApplicationRecord
 
   def enable_status_i18n
     I18n.t("admin.orders.index.status_work.#{status}")
+  end
+
+  private
+
+  def notify
+    Notification.create messages: I18n.t(".order_noti", user: user.name), user_id: user_id
   end
 end

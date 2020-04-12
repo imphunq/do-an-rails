@@ -6,6 +6,7 @@ class User < ApplicationRecord
   belongs_to :role
   has_many :wishlists
   has_many :orders
+  has_many :notifications
 
   after_initialize :default_password
   after_create :create_role

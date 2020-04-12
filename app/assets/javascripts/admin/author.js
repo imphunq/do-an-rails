@@ -23,4 +23,16 @@ $(document).ready(function() {
     })
 
   });
+
+  $(document).on('click', '.unseen_false', function() {
+    var id = $(this).attr('data-id');
+    $.ajax({
+          url: '/admin/notifications/' + id,
+          method: 'put',
+          data: {
+            id: id
+          }
+    });
+  });
 });
+
