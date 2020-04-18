@@ -18,6 +18,7 @@ class Book < ApplicationRecord
   scope :price_asc, ->{order money: :asc}
   scope :visited_desc, ->{order visited: :desc}
   scope :by_category, ->(category_ids){joins(:category_types).where(category_types: {category_id: category_ids})}
+  scope :between_price, -> (price1, price2){where('money between ? and ?', price1, price2)}
 
   def enable_status_i18n
     I18n.t("admin.authors.index.status_work.#{status}")

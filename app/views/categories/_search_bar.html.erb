@@ -16,16 +16,31 @@
         </ul>
       </aside>
       <aside class="widget shop-filter">
+        <h2 class="sidebar-title text-center">SEARCH BY NAME</h2>
+        <div class="info-widget">
+          <%= search_form_for @q, url: category_path do |f| %>
+            <%= f.text_field :name_cont, class: "search_name form-control" %>
+            <div class="widget-buttom">
+              <%= f.submit "Search", class: "button-search-name" %>
+              <%= f.submit "Clear", type: "reset", class: "button-search-name" %>
+            </div>
+          <% end %>
+        </div>
+      </aside>
+      <hr>
+      <aside class="widget shop-filter">
         <h2 class="sidebar-title text-center">PRICE SLIDER</h2>
         <div class="info-widget">
           <div class="price-filter">
               <div id="slider-range" class="range-bar"></div>
               <div class="price-slider-amount">
-                  <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+                <%= search_form_for @q, url: category_path do |f| %>
+                  <%= f.text_field :money, id: "amount", name: "price", placeholder: "Add Your Price" %>
                   <div class="widget-buttom">
-                      <input type="submit"  value="Filter"/>
-                      <input type="reset" value="CLEAR" />
+                      <%= f.submit "Filter" %>
+                      <%= f.submit "Clear", type: "reset" %>
                   </div>
+                <% end %>
               </div>
           </div>
         </div>

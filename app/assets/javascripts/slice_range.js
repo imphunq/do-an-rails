@@ -16,9 +16,9 @@ $(document).on("turbolinks:load", function(){
 
   $( "#slider-range" ).slider({
     range: true,
-    min: 30000,
+    min: 10000,
     max: 1000000,
-    values: [ 30000, 1000000 ],
+    values: [ 10000, 1000000 ],
     slide: function( event, ui ) {
       var val1 = formatNumber(ui.values[0], '.', ',')
       var val2 = formatNumber(ui.values[1], '.', ',')
