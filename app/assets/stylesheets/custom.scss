@@ -91,3 +91,17 @@ label.string.required abbr{
 span.out-stock {
   background: red !important;
 }
+
+
+.search_name {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.button-search-name {
+  outline: none;
+  background: whitesmoke;
+  border: 1px solid #757575;
+  padding: 7px 15px;
+  transition: all 0.3s ease 0s;
+}

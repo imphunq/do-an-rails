@@ -1,7 +1,8 @@
 module Admin
   class AdminBaseController < ApplicationController
-    layout "application_admin"
     before_action :notification
+
+    layout "application_admin"
 
     def notification
       @notifications = Notification.includes(:user).order_created_at_desc.limit(5)
