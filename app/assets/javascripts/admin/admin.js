@@ -22,6 +22,9 @@
 //= require bootstrap-datepicker
 //= require adminlte.min.js
 //= require bootstrap.bundle.min.js
+//= require "admin/highcharts.js"
+//= require chartkick
+//= require Chart.bundle
 //= require demo.js
 //= require toastr
 //= require "admin/toastr.min.js"

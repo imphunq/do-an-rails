@@ -2,6 +2,10 @@ class WishlistsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_book, only: %i(create destroy)
 
+  def index
+    @wishlists = Wishlist.by_user(current_user.id).includes(:book)
+  end
+
   def create
     @wishlist = Wishlist.new user_id: current_user.id, book_id: @book.id
 
@@ -13,6 +17,7 @@ class WishlistsController < ApplicationController
   end
 
   def destroy
+    @wishlists = Wishlist.by_user(current_user.id).includes(:book)
     @wishlist = Wishlist.find_by id: params[:id]
 
     if @wishlist.destroy

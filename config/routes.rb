@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       resources :books
       resources :orders
       resources :notifications, only: :update
+      resources :statistic_orders, only: :index
     end
   end
   mount ActionCable.server => '/cable'

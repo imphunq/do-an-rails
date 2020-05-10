@@ -25,10 +25,10 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="../../index.html" class="nav-link">
+            <%= link_to admin_statistic_orders_path, class: "nav-link" do %>
               <i class="far fa-circle nav-icon"></i>
-              <p>Dashboard v1</p>
-            </a>
+              <p><%= t "statistic_order" %></p>
+            <% end %>
           </li>
         </ul>
       </li>

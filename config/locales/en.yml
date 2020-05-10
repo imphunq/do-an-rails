@@ -36,3 +36,4 @@ en:
       year_month_date_concise: "%Y-%m-%d"
   no-data: "Not notifications yet"
   order_noti: "%{user} order from your website"
+  statistic_order: "Statistic order"

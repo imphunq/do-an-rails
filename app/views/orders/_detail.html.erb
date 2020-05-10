@@ -1,0 +1,54 @@
+<div class="modal-dialog modal-lg detail-order">
+  <div class="modal-content">
+    <div class="modal-header title-order">
+      <div class="text-center">
+        <h4><strong class="uppercase"><%= t ".order_detail" %></strong></h4>
+      </div>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td><strong><%= t ".name" %></strong></td>
+            <td><%= @order.user.name %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t ".address" %></strong></td>
+            <td><%= @order.address %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t ".phone" %></strong></td>
+            <td><%= @order.phone %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t ".date" %></strong></td>
+            <td><%= I18n.l(@order.created_at, formats: :default) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h5><%= t ".info" %></h5>
+      <hr>
+      <table class="table table-borderless table-vcenter">
+        <tr>
+          <th>#</th>
+          <th class="text-center-td"><%= t ".book_name" %></th>
+          <th class="text-center-td"><%= t ".quantity" %></th>
+          <th class="text-center-td"><%= t ".price" %></th>
+        </tr>
+        <% @order_details.each_with_index do |order_detail, index| %>
+          <tr>
+            <th><%= index %></th>
+            <td class="text-center-td"><%= order_detail.book_name %></td>
+            <td class="text-center-td"><%= order_detail.quantity %></td>
+            <td class="text-center-td"><%= format_money_amount order_detail.money %></td>
+          </tr>
+        <% end %>
+          <tr>
+            <td><strong><%= t "total" %></strong></td>
+            <td colspan="3" class="text-center-td"><%= format_money_amount @order.total %></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>

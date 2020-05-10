@@ -10,5 +10,6 @@ class CategoriesController < ApplicationController
     @categories = Category.select(:id, :name)
     @category = Category.find_by id: params[:id]
     @books = @q.result(distinct: true)
+    @top_books = Book.top_product
   end
 end

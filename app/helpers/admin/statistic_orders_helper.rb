@@ -1,0 +1,2 @@
+module Admin::StatisticOrdersHelper
+end

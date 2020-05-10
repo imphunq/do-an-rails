@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = Order.by_user(current_user.id)
+  end
+
   def new
     @order = Order.new
   end
@@ -20,6 +24,26 @@ class OrdersController < ApplicationController
       flash[:danger] = t "order_fail"
     end
     redirect_to root_path
+  end
+
+  def show
+    @order = Order.find_by id: params[:id]
+    @order_details = @order.order_details
+    # respond_to do |format|
+    #   format.js
+    #   format.html
+    # end
+  end
+
+  def update
+    @orders = Order.by_user(current_user.id)
+    @order = Order.find_by id: params[:id]
+
+    if @order.update_attributes status: params[:status]
+      flash[:success] = "Cap nhat thanh cong"
+    else
+      flash[:danger] = "Cap nhat that bai"
+    end
   end
 
   private

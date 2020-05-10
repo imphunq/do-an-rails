@@ -1,0 +1,52 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>WISHLISTS</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+              Home
+            <% end %>
+          </li>
+          <li>Wishlists</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="shopping-area section-padding">
+<div class="container">
+    <div class="row not-wishlist">
+      <% if @wishlists.any? %>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="wishlist-right-area table-responsive">
+                <table class="wish-list-table">
+                    <thead>
+                        <tr>
+                            <th class="t-product-name">Products</th>
+                            <th class="product-details-comment">Product Details</th>
+                            <th class="w-product-remove">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wishlist-index">
+                      <%= render partial: "wishlist", collection: @wishlists %>
+                    </tbody>
+                </table>
+            <div class="wishlist-bottom-link">
+                <%= link_to root_path, class: 'wishlist-single-link' do %>
+                    <i class="fas fa-angle-double-left"></i>
+                    Back
+                <% end %>
+            </div>
+        </div>
+      </div>
+      <% else %>
+      <p class="text-danger">No data</p>
+  <% end %>
+    </div>
+</div>
+</div>
