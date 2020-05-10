@@ -12,3 +12,41 @@ currency:
   delimiter: "."
   unit: "VNĐ"
   precision: 0
+
+month_in_year:
+  january:
+    index: 1
+    text: "January"
+  february:
+    index: 2
+    text: "February"
+  march:
+    index: 3
+    text: "March"
+  april:
+    index: 4
+    text: "April"
+  may:
+    index: 5
+    text: "May"
+  june:
+    index: 6
+    text: "June"
+  july:
+    index: 7
+    text: "July"
+  august:
+    index: 8
+    text: "August"
+  september:
+    index: 9
+    text: "September"
+  october:
+    index: 10
+    text: "October"
+  november:
+    index: 11
+    text: "November"
+  december:
+    index: 12
+    text: "December"

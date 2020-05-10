@@ -1,0 +1,21 @@
+<tr>
+    <td>
+        <%= link_to book_path(wishlist.book) do %>
+          <%= image_tag wishlist.book.image.url, class: "image_wishlist" %>
+        <% end %>
+    </td>
+    <td class="product-details">
+        <h4>Tên sách: <%= wishlist.book.name %></h4>
+        <b>Giá tiền: <%= format_money_amount wishlist.book.money %></b>
+        <p><b>Mô tả: </b><%= raw wishlist.book.description %></p>
+        <%= link_to carts_path(id: wishlist.book.id, price: wishlist.book.money, qty: 1), remote: true, method: :post, title: "Add to cart", class: "add-cart" do %>
+          ADD TO CART
+        <% end %>
+    </td>
+    <td class="product-remove">
+        <%= link_to wishlist_path(wishlist, book_id: wishlist.book.id), method: :delete, remote: true, title: "Remove from Wishlist", class: "remove-wishlist wish-btn" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+
+    </td>
+</tr>

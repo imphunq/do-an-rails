@@ -29,6 +29,8 @@ gem 'bootstrap-datepicker-rails'
 gem "twitter-bootstrap-rails"
 gem "sidekiq", '5.2.7'
 gem 'ransack'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

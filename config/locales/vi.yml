@@ -36,3 +36,4 @@ vi:
       year_month_date_concise: "%Y-%m-%d"
   no-data: "Không có thông báo nào"
   order_noti: "%{user} vừa đặt hàng từ website của bạn"
+  statistic_order: "Thống kê đơn hàng"

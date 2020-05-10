@@ -2,44 +2,24 @@
 <div class="online-banner-area">
     <div class="container">
         <div class="banner-title text-center">
-            <h2>ONLINE <span>BOOK STORE</span></h2>
+            <h2><span>TOP BOOK IN STORE</span></h2>
             <p>The Online Books Guide is the biggest big store and the biggest books library in the world that has alot of the popular and the most top category books presented here. Top Authors are here just subscribe your email address and get updated with us.</p>
         </div>
         <div class="row">
             <div class="banner-list">
+              <% @top_books.each do |book| %>
                 <div class="col-md-4 col-sm-6">
                     <div class="single-banner">
-                        <a href="#">
-                          <%= image_tag "4.jpg" %>
-                        </a>
-                        <div class="price"><span>$</span>160</div>
+                        <%= link_to book_path(book) do %>
+                          <%= image_tag book.image.url %>
+                        <% end %>
+                        <div class="price"><%= format_money_amount book.money %></div>
                         <div class="banner-bottom text-center">
-                            <a href="#">NEW RELEASE 2016</a>
+                          <%= link_to book.name, book_path(book) %>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-banner">
-                        <a href="#">
-                          <%= image_tag "4.jpg" %>
-                        </a>
-                        <div class="price"><span>$</span>160</div>
-                        <div class="banner-bottom text-center">
-                            <a href="#">NEW RELEASE 2016</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 hidden-sm">
-                    <div class="single-banner">
-                        <a href="#">
-                          <%= image_tag "4.jpg" %>
-                        </a>
-                        <div class="price"><span>$</span>160</div>
-                        <div class="banner-bottom text-center">
-                            <a href="#">NEW RELEASE 2016</a>
-                        </div>
-                    </div>
-                </div>
+              <% end %>
             </div>
         </div>
     </div>

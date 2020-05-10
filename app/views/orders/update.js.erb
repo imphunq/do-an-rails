@@ -1,0 +1,7 @@
+<% if flash[:success] %>
+  toastr.success("<%= flash[:success] %>");
+<% end %>
+<% if flash[:danger] %>
+  toastr.error("<%= flash[:danger] %>")
+<% end %>
+$('#list-cart').html('<%= j render @orders %>')

@@ -49,22 +49,26 @@
     <div class="shop-widget-bottom">
       <aside class="widget widget-seller">
         <h2 class="sidebar-title">TOP SELLERS</h2>
-        <div class="single-seller">
-          <div class="seller-img">
-              <img src="img/shop/1.jpg" alt="" />
+        <% @top_books.each do |book| %>
+          <div class="single-seller">
+            <div class="seller-img">
+              <%= image_tag book.image.url %>
+            </div>
+            <div class="seller-details">
+                <%= link_to book_path(book) do %>
+                  <h5><%= book.name %></h5>
+                <% end %>
+                <h5><%= format_money_amount book.money %></h5>
+                <ul>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                </ul>
+            </div>
           </div>
-          <div class="seller-details">
-              <a href="shop.html"><h5>Cold mountain</h5></a>
-              <h5>$ 50.00</h5>
-              <ul>
-                  <li><i class="fas fa-star icolor"></i></li>
-                  <li><i class="fas fa-star icolor"></i></li>
-                  <li><i class="fas fa-star icolor"></i></li>
-                  <li><i class="fas fa-star icolor"></i></li>
-                  <li><i class="fas fa-star icolor"></i></li>
-              </ul>
-          </div>
-        </div>
+        <% end %>
       </aside>
     </div>
   </div>

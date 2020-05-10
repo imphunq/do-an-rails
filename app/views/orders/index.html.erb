@@ -1,0 +1,51 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>ORDERS</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+              Home
+            <% end %>
+          </li>
+          <li>Orders</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="shopping-cart-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wishlist-table-area table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th class="product-image">#</th>
+                  <th class="product-subtotal"><%= t "date_buy" %></th>
+                  <th class="product-subtotal"><%= t "sub_total" %></th>
+                  <th class="product-subtotal"><%= t "status" %></th>
+                  <th class="product-remove"><%= t "action" %></th>
+                </tr>
+              </thead>
+              <tbody id="list-cart">
+                <% if @orders.present? %>
+                  <%= render @orders %>
+                <% else %>
+                  <tr class="text-danger text-center not-product">
+                    <td colspan="6"><%= t "not_product" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="order-modal-user" class="modal fade" data-backdrop="static"></div>

@@ -72,6 +72,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (3.3.1)
     childprocess (3.0.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -138,6 +139,8 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     i18n-js (3.6.0)
@@ -323,12 +326,14 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
+  chartkick
   chromedriver-helper
   ckeditor
   coffee-rails (~> 4.2)
   config
   devise
   font-awesome-sass (~> 5.12.0)
+  groupdate
   i18n-js
   jbuilder (~> 2.5)
   jquery-rails

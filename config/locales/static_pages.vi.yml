@@ -1,0 +1,6 @@
+vi:
+  admin:
+    static_pages:
+      index:
+        title: "Đơn hàng trong 7 ngày qua"
+        title_status: "Thống kê trạng thái các đơn hàng"

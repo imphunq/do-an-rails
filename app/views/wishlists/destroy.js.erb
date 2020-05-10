@@ -12,3 +12,9 @@
 <% else %>
   $('.button-reaction-<%= @book.id %>').html('<%= j render "static_pages/button_book", book: @book, wishlist: @wishlist %>');
 <% end %>
+
+<% if @wishlists.any? %>
+  $('#wishlist-index').html('<%= j render partial: "wishlist", collection: @wishlists %>');
+<% else %>
+  $('.not-wishlist').html('<p class="text-danger">No data</p>');
+<% end %>

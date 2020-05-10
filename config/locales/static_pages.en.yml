@@ -1,0 +1,6 @@
+en:
+  admin:
+    static_pages:
+      index:
+        title: "Order in 7 days ago"
+        title_status: "Statistic order status"
