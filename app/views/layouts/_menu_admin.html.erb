@@ -30,6 +30,18 @@
               <p><%= t "statistic_order" %></p>
             <% end %>
           </li>
+          <li class="nav-item">
+            <%= link_to admin_hottest_products_index_path, class: "nav-link" do %>
+              <i class="far fa-circle nav-icon"></i>
+              <p><%= t "hottest_book" %></p>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_rest_books_index_path, class: "nav-link" do %>
+              <i class="far fa-circle nav-icon"></i>
+              <p><%= t "rest_book" %></p>
+            <% end %>
+          </li>
         </ul>
       </li>
       <li class="nav-item">

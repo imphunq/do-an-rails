@@ -8,7 +8,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-md-8 col-sm-12 hidden-xs">
+      <div class="col-md-7 col-sm-12 hidden-xs">
         <div class="mainmenu text-center">
           <nav>
             <ul id="nav">
@@ -22,23 +22,44 @@
                   <% end %>
                 </ul>
               </li>
-              <li><a href="shop.html">REVIEW BOOK</a></li>
-              <li>
-                <%= link_to "HISTORY", orders_path %>
+              <li><a href="#">Author</a>
+                <ul class="sub-menu">
+                  <% @authors.each do |author| %>
+                    <li><%= link_to author.name, author_path(author) %></li>
+                  <% end %>
+                </ul>
               </li>
               <li>
-                <%= link_to "WISHLIST", wishlists_path %>
-              </li>
+                  <%= link_to "ABOUT", root_path %>
+                </li>
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to "HISTORY", orders_path %>
+                </li>
+                <li>
+                  <%= link_to "WISHLIST", wishlists_path %>
+                </li>
+              <% end %>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="col-md-2 hidden-sm">
+      <div class="col-md-3 hidden-sm">
         <div class="header-right">
           <ul>
-            <li>
-              <a href="account.html"><i class="fas fa-user"></i></a>
-            </li>
+            <% if user_signed_in? %>
+              <li class="option-user">
+                <%= link_to "#" do %>
+                  <i class="fas fa-user"></i>
+                <% end %>
+                <ul class="sub-menu-self">
+                  <% if current_user.is_admin? %>
+                    <li><%= link_to "Admin Page", admin_root_path %></li>
+                  <% end %>
+                  <li><%= link_to "My account" %></li>
+                </ul>
+              </li>
+            <% end %>
             <li class="shoping-cart">
               <a href="#">
                 <i class="fas fa-cart-plus"></i>
@@ -61,6 +82,11 @@
                 <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete %>
               <% end %>
             </li>
+            <% unless user_signed_in? %>
+              <li class="signin">
+                <%= link_to "Đăng ký", signup_path %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

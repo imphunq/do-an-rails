@@ -1,17 +1,17 @@
 <section class="content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-3">
         <div class="form-group">
-          <%= label_tag :time, class: "control-label col-md-2" do %>
-            <%= t ".time" %>
-          <% end %>
-          <div class="col-md-9">
-            <%= select_tag :month, options_for_select(Settings.month_in_year.map {|key, value| [value.text, value.index]},
-            selected: Date.current.month || params[:month]),
-            class: "form-control select-select2 remove-padding select-month-stats" %>
-          </div>
+          <%= select_tag :month, options_for_select(Settings.month_in_year.map {|key, value| [value.text, value.index]},
+          selected: Date.current.month || params[:month]),
+          class: "form-control select-select2 remove-padding select-month-stats" %>
         </div>
+      </div>
+      <div class="col-md-3">
+        <%= select_tag :year, options_for_select(@year_order.map {|key| [key, key]},
+        selected: Date.current.year || params[:year]),
+        class: "form-control select-select2 remove-padding select-month-stats" %>
       </div>
     </div>
     <div class="row">

@@ -1,0 +1,75 @@
+<div class="col-md-3 col-sm-3 col-xs-12">
+  <div class="shop-widget">
+    <div class="shop-widget-top">
+      <aside class="widget widget-categories">
+        <h2 class="sidebar-title text-center">AUTHOR</h2>
+        <ul class="sidebar-menu">
+          <% @authors.each do |author| %>
+            <li>
+              <%= link_to author_path(author) do %>
+                 <i class="fas fa-angle-double-right"></i>
+                  <%= author.name %>
+                  <span>(<%= author.books.size %>)</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </aside>
+      <aside class="widget shop-filter">
+        <h2 class="sidebar-title text-center">SEARCH BY NAME</h2>
+        <div class="info-widget">
+          <%= search_form_for @q, url: author_path do |f| %>
+            <%= f.text_field :name_cont, class: "search_name form-control" %>
+            <div class="widget-buttom">
+              <%= f.submit "Search", class: "button-search-name" %>
+              <%= f.submit "Clear", type: "reset", class: "button-search-name" %>
+            </div>
+          <% end %>
+        </div>
+      </aside>
+      <hr>
+      <aside class="widget shop-filter">
+        <h2 class="sidebar-title text-center">PRICE SLIDER</h2>
+        <div class="info-widget">
+          <div class="price-filter">
+              <div id="slider-range" class="range-bar"></div>
+              <div class="price-slider-amount">
+                <%= search_form_for @q, url: author_path do |f| %>
+                  <%= f.text_field :money, id: "amount", name: "price", placeholder: "Add Your Price" %>
+                  <div class="widget-buttom">
+                      <%= f.submit "Filter" %>
+                      <%= f.submit "Clear", type: "reset" %>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="shop-widget-bottom">
+      <aside class="widget widget-seller">
+        <h2 class="sidebar-title">TOP SELLERS</h2>
+        <% @top_books.each do |book| %>
+          <div class="single-seller">
+            <div class="seller-img">
+              <%= image_tag book.image.url %>
+            </div>
+            <div class="seller-details">
+                <%= link_to book_path(book) do %>
+                  <h5><%= book.name %></h5>
+                <% end %>
+                <h5><%= format_money_amount book.money %></h5>
+                <ul>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                    <li><i class="fas fa-star icolor"></i></li>
+                </ul>
+            </div>
+          </div>
+        <% end %>
+      </aside>
+    </div>
+  </div>
+</div>

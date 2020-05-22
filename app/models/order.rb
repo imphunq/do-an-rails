@@ -23,6 +23,6 @@ class Order < ApplicationRecord
   end
 
   def refuse_notify
-    Notification.create(messages: "Huy hang", user_id: user_id) if self.refuse?
+    Notification.create(messages: I18n.t(".update_noti", user: user.name), user_id: user_id) if self.refuse?
   end
 end

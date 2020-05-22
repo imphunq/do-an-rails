@@ -1,6 +1,7 @@
 module Admin
   class StatisticOrdersController < AdminBaseController
     def index
+      @year_order = Order.pluck("year(created_at)").uniq
       if params[:month].present?
         days_in_month = Time.days_in_month params[:month].to_i
         order_stats = Order.where("MONTH(created_at) = #{params[:month]}").group_by_day_of_month(:created_at).count
