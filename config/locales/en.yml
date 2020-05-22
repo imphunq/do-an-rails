@@ -36,4 +36,7 @@ en:
       year_month_date_concise: "%Y-%m-%d"
   no-data: "Not notifications yet"
   order_noti: "%{user} order from your website"
+  update_noti: "%{user} just cancel a order"
   statistic_order: "Statistic order"
+  hottest_book: "Statistic books sold"
+  rest_book: "Statistic rest books"

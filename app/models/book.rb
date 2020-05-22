@@ -20,6 +20,8 @@ class Book < ApplicationRecord
   scope :by_category, ->(category_ids){joins(:category_types).where(category_types: {category_id: category_ids})}
   scope :between_price, -> (price1, price2){where('money between ? and ?', price1, price2)}
   scope :top_product, -> {where id: OrderDetail.top_product}
+  scope :hot_author_id, -> {top_product.pluck(:author_id).uniq}
+  scope :by_author, ->(author_id){where author_id: author_id}
 
   def enable_status_i18n
     I18n.t("admin.authors.index.status_work.#{status}")

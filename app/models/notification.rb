@@ -3,6 +3,7 @@ class Notification < ApplicationRecord
 
   scope :order_created_at_desc, -> {order created_at: :desc}
   scope :notification_unread, ->{where read: false}
+  scope :notification_read, ->{where read: true}
 
   after_create_commit :update_noti
 

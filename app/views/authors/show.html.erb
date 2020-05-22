@@ -1,0 +1,75 @@
+<div class="breadcrumbs-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumbs">
+         <h2>AUTHOR'S BOOK</h2>
+         <ul class="breadcrumbs-list">
+          <li>
+            <%= link_to root_path, title: "Return to Home" do %>
+            Home
+            <% end %>
+          </li>
+          <li>Product</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="shopping-area section-padding">
+  <div class="container">
+    <div class="row">
+      <%= render "search_bar" %>
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <div class="shop-tab-area">
+          <div class="shop-tab-list">
+            <div class="shop-tab-pill pull-left">
+              <ul>
+                <li class="active" id="left">
+                  <%= link_to author_path(@author), class: "type-view grid" do %>
+                    <i class="fas fa-th"></i><span>Grid</span>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-tab-pill pull-right">
+              <ul>
+                <li class="product-size-deatils">
+                  <div class="show-label">
+                    <label>Show : </label>
+                    <select>
+                      <option value="10" selected="selected">10</option>
+                      <option value="09">09</option>
+                      <option value="08">08</option>
+                      <option value="07">07</option>
+                      <option value="06">06</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="product-size-deatils">
+                  <div class="show-label">
+                    <label><i class="fas fa-sort-amount-asc"></i>Sort by : </label>
+                    <select>
+                      <option value="position" selected="selected">Position</option>
+                      <option value="Name">Name</option>
+                      <option value="Price">Price</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="shop-pagination"><a href="#">1</a></li>
+                <li class="shop-pagination"><a href="#">2</a></li>
+                <li class="shop-pagination"><a href="#"><i class="fas fa-caret-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-content shopping-page">
+            <div class="row tab-pane fade in active">
+              <%= render "categories/grid" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

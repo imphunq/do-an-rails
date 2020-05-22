@@ -42,6 +42,8 @@ $(document).ready(() => {
     $('.list').parent('li').addClass('active');
     $('.grid').parent('li').removeClass('active');
   }
+
+  // $(document).on('click', '.option-user')
 });
 
 $(document).on("turbolinks:load", function(){

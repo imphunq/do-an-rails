@@ -5,6 +5,7 @@ role:
 paginate:
   show_15: 15
   show_16: 16
+  show_20: 20
 max_length_category_name: 100
 
 currency:

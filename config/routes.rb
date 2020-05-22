@@ -1,5 +1,11 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'rest_books/index'
+  end
+  namespace :admin do
+    get 'hottest_products/index'
+  end
   mount Ckeditor::Engine => '/ckeditor'
   mount Sidekiq::Web, at: '/sidekiq'
   scope "(:locale)", :locale => /en|vi/ do
@@ -8,6 +14,7 @@ Rails.application.routes.draw do
     }
     devise_scope :user do
       get "signin", to: "devise/sessions#new"
+      get "signup", to: "devise/registrations#new"
       post "signin" => "devise/sessions#create"
     end
     root 'static_pages#index'
@@ -23,6 +30,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :categories, only: :show
     resources :notifications
+    resources :authors
     # get "/modalbook", to: "static_pages#modalbook"
     namespace :admin do
       root 'static_pages#index'
@@ -32,8 +40,10 @@ Rails.application.routes.draw do
       resources :users
       resources :books
       resources :orders
-      resources :notifications, only: :update
+      resources :notifications, only: [:update, :index]
       resources :statistic_orders, only: :index
+      resources :hottest_products, only: :index
+      resources :rest_books, only: :index
     end
   end
   mount ActionCable.server => '/cable'

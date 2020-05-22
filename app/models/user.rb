@@ -9,14 +9,14 @@ class User < ApplicationRecord
   has_many :notifications
 
   after_initialize :default_password
-  after_create :create_role
+  after_initialize :create_role
 
   enum gender: {female: 0, male: 1, other: 2}
   enum staff_type: {part_time: 0, full_time: 1}
   mount_uploader :avatar, UserImageUploader
 
-  validates :name, presence: true, length: {maximum: Settings.max_length_category_name}
-  validates :gender, presence: true, inclusion: {in: genders.keys}
+  # validates :name, presence: true, length: {maximum: Settings.max_length_category_name}
+  # validates :gender, presence: true, inclusion: {in: genders.keys}
   validates :email, presence: true, format: {with: Devise.email_regexp}
   validates :password, confirmation: true, length: {within: Devise.password_length}, allow_nil: true
 
