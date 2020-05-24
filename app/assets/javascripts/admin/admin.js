@@ -22,7 +22,6 @@
 //= require bootstrap-datepicker
 //= require adminlte.min.js
 //= require bootstrap.bundle.min.js
-//= require "admin/highcharts.js"
 //= require chartkick
 //= require Chart.bundle
 //= require demo.js
@@ -37,5 +36,4 @@
 //= require "admin/books.js"
 //= require cable.js
 //= require sweetalert2
-//= require activestorage
 //= require_tree .

@@ -44,5 +44,17 @@
         </div>
       </div>
     </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link" data-toggle="dropdown" href="#">
+        <%= t "logout" %>
+        <i class="fa fa-caret-down"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+        <div class="dropdown-divider"></div>
+        <div class="p-3">
+          <%= link_to t("logout"), destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+    </li>
   </ul>
 </nav>

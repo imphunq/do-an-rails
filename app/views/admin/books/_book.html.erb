@@ -3,7 +3,6 @@
     <%= create_index params[:page], book_counter, Settings.paginate.show_15 %>
   </td>
   <td class="text-center"><strong><%= book.name %></strong></td>
-  <td class="text-center"><%= raw book.description %></td>
   <td class="text-center"><%= book.money %></td>
   <td class="text-center"><%= book.quantity %></td>
   <td class="text-center"><%= book.author.name %></td>

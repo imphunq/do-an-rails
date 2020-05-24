@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :notifications
 
   after_initialize :default_password
-  after_initialize :create_role
+  # after_initialize :create_role
 
   enum gender: {female: 0, male: 1, other: 2}
   enum staff_type: {part_time: 0, full_time: 1}
@@ -46,8 +46,8 @@ class User < ApplicationRecord
     self.password = "123456" if self.new_record?
   end
 
-  def create_role
-    role_group = Role.find_by name: Settings.role.user
-    self.role_id = role_group.id if role_group
-  end
+  # def create_role
+  #   role_group = Role.find_by name: Settings.role.user
+  #   self.role_id = role_group.id if role_group
+  # end
 end
