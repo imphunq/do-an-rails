@@ -63,7 +63,7 @@
           <h2><%= @book.name %></h2>
           <% if @book.quantity > 0 %>
             <div class="availability">
-              <span>In stock</span>
+              <span><%= t "in_stock" %></span>
             </div>
           <% else %>
             <div class="out-of-stock">
@@ -81,7 +81,7 @@
             <span>
               <%= link_to carts_path(id: @book.id, price: @book.money, qty: 1), remote: true, method: :post, class: "cart-btn btn-default" do %>
                 <i class="fas fa-cart-plus"></i>
-                Add to cart
+                <%= t "add_to_cart" %>
               <% end %>
             </span>
           </div>

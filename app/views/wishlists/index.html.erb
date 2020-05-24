@@ -27,9 +27,9 @@
                 <table class="wish-list-table">
                     <thead>
                         <tr>
-                            <th class="t-product-name">Products</th>
-                            <th class="product-details-comment">Product Details</th>
-                            <th class="w-product-remove">Remove</th>
+                            <th class="t-product-name"><%= t "product" %></th>
+                            <th class="product-details-comment"><%= t "product_detail" %></th>
+                            <th class="w-product-remove"><%= t "remove" %></th>
                         </tr>
                     </thead>
                     <tbody id="wishlist-index">
@@ -39,13 +39,13 @@
             <div class="wishlist-bottom-link">
                 <%= link_to root_path, class: 'wishlist-single-link' do %>
                     <i class="fas fa-angle-double-left"></i>
-                    Back
+                    <%= t "back" %>
                 <% end %>
             </div>
         </div>
       </div>
       <% else %>
-      <p class="text-danger">No data</p>
+      <p class="text-danger"><%= t "no_data" %></p>
   <% end %>
     </div>
 </div>
