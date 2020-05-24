@@ -3,7 +3,7 @@
     <%= create_index params[:page], category_counter, Settings.paginate.show_15 %>
   </td>
   <td><strong><%= category.name %></strong></td>
-  <td><%= raw category.description %></td>
+  <td><%= raw category.description.truncate(80) %></td>
   <td class="text-center">
     <p class="label label_category_<%= category.status %>">
       <%= category.enable_status_i18n %>
@@ -13,7 +13,7 @@
     <div class="btn-group option">
       <%= link_to edit_admin_category_path(category), class: "btn btn-xs btn-primary button-custom",
         title: t(".edit"), remote: true do %>
-        <i class="fa fa-pencil-alt" aria-hidden="true""></i>
+        <i class="fas fa-pencil-alt" aria-hidden="true""></i>
       <% end %>
     </div>
     <div class="btn-group option">

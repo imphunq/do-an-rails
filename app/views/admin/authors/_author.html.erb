@@ -3,7 +3,7 @@
     <%= create_index params[:page], author_counter, Settings.paginate.show_15 %>
   </td>
   <td class="text-center"><strong><%= author.name %></strong></td>
-  <td><%= raw author.description %></td>
+  <td><%= raw author.description.truncate(70) %></td>
   <td class="text-center">
     <p class="label label_category_<%= author.status %>">
       <%= author.enable_status_i18n %>
