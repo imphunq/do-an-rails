@@ -2,7 +2,7 @@
   <div class="shop-widget">
     <div class="shop-widget-top">
       <aside class="widget widget-categories">
-        <h2 class="sidebar-title text-center">CATEGORY</h2>
+        <h2 class="sidebar-title text-center"><%= t "category" %></h2>
         <ul class="sidebar-menu">
           <% @categories.each do |category| %>
             <li>
@@ -16,20 +16,20 @@
         </ul>
       </aside>
       <aside class="widget shop-filter">
-        <h2 class="sidebar-title text-center">SEARCH BY NAME</h2>
+        <h2 class="sidebar-title text-center"><%= t "search_by_name" %></h2>
         <div class="info-widget">
           <%= search_form_for @q, url: category_path do |f| %>
             <%= f.text_field :name_cont, class: "search_name form-control" %>
             <div class="widget-buttom">
-              <%= f.submit "Search", class: "button-search-name" %>
-              <%= f.submit "Clear", type: "reset", class: "button-search-name" %>
+              <%= f.submit t("filter"), class: "button-search-name" %>
+              <%= f.submit t("clear"), type: "reset", class: "button-search-name" %>
             </div>
           <% end %>
         </div>
       </aside>
       <hr>
       <aside class="widget shop-filter">
-        <h2 class="sidebar-title text-center">PRICE SLIDER</h2>
+        <h2 class="sidebar-title text-center"><%= t "price_slider" %></h2>
         <div class="info-widget">
           <div class="price-filter">
               <div id="slider-range" class="range-bar"></div>
@@ -37,8 +37,8 @@
                 <%= search_form_for @q, url: category_path do |f| %>
                   <%= f.text_field :money, id: "amount", name: "price", placeholder: "Add Your Price" %>
                   <div class="widget-buttom">
-                      <%= f.submit "Filter" %>
-                      <%= f.submit "Clear", type: "reset" %>
+                      <%= f.submit t("filter") %>
+                      <%= f.submit t("clear"), type: "reset" %>
                   </div>
                 <% end %>
               </div>

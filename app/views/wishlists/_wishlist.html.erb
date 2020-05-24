@@ -5,9 +5,9 @@
         <% end %>
     </td>
     <td class="product-details">
-        <h4>Tên sách: <%= wishlist.book.name %></h4>
-        <b>Giá tiền: <%= format_money_amount wishlist.book.money %></b>
-        <p><b>Mô tả: </b><%= raw wishlist.book.description %></p>
+        <h4><%= t "product_name" %>: <%= wishlist.book.name %></h4>
+        <b><%= t "unit_price" %>: <%= format_money_amount wishlist.book.money %></b>
+        <p><b><%= t "des" %>: </b><%= raw wishlist.book.description %></p>
         <%= link_to carts_path(id: wishlist.book.id, price: wishlist.book.money, qty: 1), remote: true, method: :post, title: "Add to cart", class: "add-cart" do %>
           ADD TO CART
         <% end %>
