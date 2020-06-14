@@ -28,8 +28,8 @@ module Thuctap
       address: "smtp.gmail.com",
       port: 587,
       domain: "gmail.com",
-      user_name: "phube232@gmail.com",
-      password: "quangphu2321998",
+      user_name: "",
+      password: "",
       authentication: "plain"
       # enable_starttls_auto: true
     }
