@@ -30,11 +30,6 @@
         </p>
 
         <p class="form-row">
-          <%= f.label :name %><br />
-          <%= f.text_field :name, autocomplete: "name" %>
-        </p>
-
-        <p class="form-row">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>

@@ -11,12 +11,14 @@
     </p>
   </td>
   <td class="text-center" >
+  <% unless user.is_customer? %>
     <div class="btn-group option">
       <%= link_to edit_admin_user_path(user), class: "btn btn-xs btn-primary button-custom",
         title: t(".edit") do %>
         <i class="fa fa-pencil-alt" aria-hidden="true"></i>
       <% end %>
     </div>
+  <% end %>
     <div class="btn-group option">
       <%= button_tag class: "btn btn-xs btn-danger delete-user-button button-custom-danger",
         title: t(".delete"), data: {id: user.id, name: user.name} do %>
