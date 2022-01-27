@@ -27,7 +27,7 @@ gem "toastr-rails"
 gem "i18n-js"
 gem 'bootstrap-datepicker-rails'
 gem "twitter-bootstrap-rails"
-gem "sidekiq", '5.2.7'
+gem "sidekiq", '6.4.0'
 gem 'ransack'
 gem 'chartkick'
 gem 'groupdate'
